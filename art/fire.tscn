@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://db7t03vhrdhm"]
+
+[ext_resource type="Script" path="res://art/fire.gd" id="1_omcxx"]
+[ext_resource type="Texture2D" uid="uid://i688lcsoqxnh" path="res://art/ARW 2D Flame Sprite Sheet .png" id="1_xkf6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg5ux"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qcq2"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5o7d"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f6sy"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tng6"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4bhi"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuynu"]
+atlas = ExtResource("1_xkf6q")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qyrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg5ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qcq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5o7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f6sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tng6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4bhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuynu")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8dlc"]
+radius = 7.0
+height = 24.0
+
+[node name="Fire" type="Area2D"]
+script = ExtResource("1_omcxx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3qyrt")
+animation = &"fire"
+frame_progress = 0.951455
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_p8dlc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

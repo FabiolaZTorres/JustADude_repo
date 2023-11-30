@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dns3buljvw1gm"
+path="res://.godot/imported/Adventure  Royalty Free Medieval Fantasy Music.mp3-15aead599b052c6365d6897d94e3f8c6.mp3str"
+
+[deps]
+
+source_file="res://Adventure  Royalty Free Medieval Fantasy Music.mp3"
+dest_files=["res://.godot/imported/Adventure  Royalty Free Medieval Fantasy Music.mp3-15aead599b052c6365d6897d94e3f8c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
